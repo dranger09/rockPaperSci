@@ -17,40 +17,33 @@ function computerPlay() {
         cpChoice = 'scissors';
     }
     console.log(cpChoice);
-
 }
 
 function game() {
     
-    while( i < 1) {
+    while( i < 5) {
         playerPlay();
         computerPlay();
         results();
 
-        if(pWins == 5 || cpWins == 5){
-            i++;
-        }
+        i++;
         
+    }
+    if(pWins > cpWins){
+        console.log("YOU WIN!!!");
+    }else if(pWins < cpWins){
+        console.log("YOU LOSE!!!");
+    }else {
+        console.log("TIE!!!")
     }
 }
 
 function playerPlay() {
     pChoice = prompt("Enter Rock, Paper, or Scissors").toLowerCase();
     console.log(pChoice);
-    
-    // validation();
-    
 }
 
-function validation() {
-    if(pChoice != "rock" || pChoice != 'paper' || pChoice != 'scissors'){
-        console.log(pChoice);
-        alert("Error: please make a valid choice");
-        playerPlay();
-    }else{
-        console.log(pChoice);
-    }
-}
+
 
 function results() {
 
@@ -84,13 +77,10 @@ function results() {
     //Tie
     if(pChoice == cpChoice){
         console.log("Tie Game")
-        i--;
     }
 
     console.log("Computer: " + cpWins);
     console.log("Player Wins: " + pWins);
-    
-
 }
 
 
