@@ -22,7 +22,7 @@ function computerPlay() {
 function game() {
     
     while( i < 5) {
-        playerPlay();
+        
         computerPlay();
         results();
 
@@ -39,8 +39,29 @@ function game() {
 }
 
 function playerPlay() {
-    pChoice = prompt("Enter Rock, Paper, or Scissors").toLowerCase();
+    //pChoice = prompt("Enter Rock, Paper, or Scissors").toLowerCase();
     console.log(pChoice);
+}
+
+function rock() {
+    pChoice = "rock";
+    computerPlay();
+    results();
+    
+    
+}
+
+function paper() {
+    pChoice = "paper";
+    computerPlay();
+    results();
+    
+}
+
+function scissors() {
+    pChoice = "scissors";
+    computerPlay();
+    results(); 
 }
 
 
@@ -49,38 +70,47 @@ function results() {
 
     //Computer Win
     if(cpChoice == 'rock' && pChoice == 'scissors' ){
+        document.getElementById("compChoice").innerText ="Rock beats Scissors, You Lose!!!";
         console.log("Rock beats Scissors, You Lose!!!")
         cpWins++;
         // console.log("Computer: " + cpWins);
         // console.log("Player Wins: " + pWins);
     }else if(cpChoice == 'paper' && pChoice == 'rock'){
+        document.getElementById("compChoice").innerText = "Paper Beats Rock, You Lose";
         console.log("Paper beats Rock, You Lose!!!");
         cpWins++;
         
     }else if(cpChoice == 'scissors' && pChoice == 'paper'){
+        document.getElementById("compChoice").innerText ="Scissors beats Paper, you Lose!!!";
         console.log("Scissors beats Paper, You Lose!!!");
         cpWins++;
     }else
 
     //Player WIn
     if(pChoice == 'rock' && cpChoice == 'scissors'){
+        document.getElementById("compChoice").innerText ="Rock beats Scissors, You Win!!!";
         console.log("Rock beats Scissors, You Win!!!")
         pWins++;
     }else if(pChoice == 'paper' && cpChoice == 'rock'){
+        document.getElementById("compChoice").innerText ="Paper beats Rock, You Win";
         console.log("Paper beats Rock, You Win!!!");
         pWins++;
     }else if(pChoice == 'scissors' && cpChoice == 'paper'){
-        onsole.log("Scissors beats Paper, You Win!!!");
+        document.getElementById("compChoice").innerText ="Scissors beats Paper, you Win!!!";
+        console.log("Scissors beats Paper, You Win!!!");
         pWins++;
     }
 
     //Tie
     if(pChoice == cpChoice){
+        document.getElementById("compChoice").innerText ="Tie Game";
         console.log("Tie Game")
     }
 
     console.log("Computer: " + cpWins);
     console.log("Player Wins: " + pWins);
+    document.getElementById("win").innerHTML = pWins;
+    document.getElementById("lose").innerHTML = cpWins;
 }
 
 

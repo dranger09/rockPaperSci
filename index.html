@@ -7,14 +7,30 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        <header>This is the top of the page</header>
-        <div>
-            <div>Rock</div>
-            <div>Paper</div>
-            <div>Scissors</div>
+        <header class="banner">ROCK PAPER SCISSORS!!!!!</header>
+
+        <div class="main">
+            <div class="button" onclick="rock()">Rock</div>
+            <div class="button" onclick="paper()">Paper</div>
+            <div class="button" onclick="scissors()">Scissors</div>
         </div>
+        <div class="section"> 
+            <div class="bottom">
+                <div class="cchoice" id="compChoice">Compter Choice</div>
+            </div>
+
+            <div class="bottom">
+                <div class="results">Win</div>
+                <div class="results">Lose</div>
+            </div>
+            <div class="bottom">
+                <div class="results" id="win">0</div>
+                <div class="results" id="lose">0</div>
+            </div>
+        </div>
+       
         <script>
-            game();
+            //game();
         </script>
     </body>
 </html>
